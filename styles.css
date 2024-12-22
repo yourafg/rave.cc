@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-image: url('background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  animation: backgroundAnimation 10s infinite alternate;
+  perspective: 1000px;
+}
+
+.header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  max-width: 60px;
+  margin-right: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #7F00FF;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(127, 0, 255, 0.7), -2px -2px 5px rgba(127, 0, 255, 0.7);
+  animation: logoTextAnimation 2s ease-in-out;
+}
+
+.discord-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discord-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+.discord-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.description {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #7F00FF;
+  text-shadow: 2px 2px 5px rgba(45, 1, 51, 0.911), -2px -2px 5px rgba(59, 7, 59, 0.7);
+  letter-spacing: 1px;
+  animation: descriptionAnimation 2s ease-in-out;
+}
+
+.buttons {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+button {
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  background: linear-gradient(45deg, #7F00FF, #7F00FF);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: buttonFadeIn 1s ease-in-out forwards;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+button:hover {
+  background: linear-gradient(45deg, #9B00FF, #7F00FF);
+  transform: scale(1.1);
+}
+
+button:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+button:nth-child(2) {
+  animation-delay: 1s;
+}
+
+@keyframes buttonFadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes backgroundAnimation {
+  0% {
+      background-color: #000;
+  }
+  100% {
+      background-color: #2e003e;
+  }
+}
+
+@keyframes descriptionAnimation {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes logoTextAnimation {
+  0% { opacity: 0; transform: translateX(-20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
